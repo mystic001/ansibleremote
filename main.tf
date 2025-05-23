@@ -17,13 +17,13 @@ resource "azurerm_resource_group" "rg" {
   tags     = var.tags
 }
 
-module "vnet" {
-  source = "./modules/vnet"
+# module "vnet" {
+#   source = "./modules/vnet"
 
-  resource_group_name = azurerm_resource_group.rg.name
-  location           = var.location
-  vnet_name          = var.vnet_name
-  address_space      = var.address_space
-  subnets            = var.subnets
-  tags               = var.tags
-}
+#   resource_group_name = azurerm_resource_group.rg.name
+#   location           = var.location
+#   vnet_name          = var.vnet_name
+#   address_space      = var.address_space
+#   subnets            = var.subnets
+#   tags               = var.tags
+# }
