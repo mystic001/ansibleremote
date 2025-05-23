@@ -19,7 +19,7 @@ module "vnet" {
 
   resource_group_name = "dev-vnet-rg"
   location           = "eastus"
-  vnet_name          = "dev-vnet"
+  vnet_name          = "dev-vnet-test"
   address_space      = ["10.1.0.0/16"]
 
   subnets = {
