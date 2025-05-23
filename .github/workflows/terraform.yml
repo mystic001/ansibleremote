@@ -38,19 +38,13 @@ jobs:
       with:
         terraform_version: 1.5.0
 
-    - name: Verify Backend Configuration
+    - name: Verify Azure Credentials
       run: |
-        echo "Verifying backend configuration..."
-        echo "Storage Account: tfstate14839"
-        echo "Container: tfstate"
-        echo "Using Azure AD authentication"
-        
-        # Verify Azure credentials
-        echo "Checking Azure credentials..."
-        echo "Client ID length: ${#ARM_CLIENT_ID}"
-        echo "Client Secret length: ${#ARM_CLIENT_SECRET}"
-        echo "Subscription ID: $ARM_SUBSCRIPTION_ID"
+        echo "Verifying Azure credentials..."
+        echo "Client ID: $ARM_CLIENT_ID"
         echo "Tenant ID: $ARM_TENANT_ID"
+        echo "Subscription ID: $ARM_SUBSCRIPTION_ID"
+        echo "Client Secret length: ${#ARM_CLIENT_SECRET}"
 
     - name: Terraform Format
       id: fmt
