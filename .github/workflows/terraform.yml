@@ -34,6 +34,13 @@ jobs:
       with:
         terraform_version: 1.5.0
 
+    - name: Verify Backend Configuration
+      run: |
+        echo "Verifying backend configuration..."
+        echo "Storage Account: tfstate14839"
+        echo "Container: tfstate"
+        echo "Access Key length: ${#ARM_ACCESS_KEY}"
+
     - name: Terraform Format
       id: fmt
       run: terraform fmt -check
