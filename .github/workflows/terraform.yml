@@ -40,6 +40,15 @@ jobs:
         echo "Storage Account: tfstate14839"
         echo "Container: tfstate"
         echo "Access Key length: ${#ARM_ACCESS_KEY}"
+        echo "First 4 characters of key: ${ARM_ACCESS_KEY:0:4}"
+        echo "Last 4 characters of key: ${ARM_ACCESS_KEY: -4}"
+        
+        # Verify Azure credentials
+        echo "Checking Azure credentials..."
+        echo "Client ID length: ${#ARM_CLIENT_ID}"
+        echo "Client Secret length: ${#ARM_CLIENT_SECRET}"
+        echo "Subscription ID: $ARM_SUBSCRIPTION_ID"
+        echo "Tenant ID: $ARM_TENANT_ID"
 
     - name: Terraform Format
       id: fmt
